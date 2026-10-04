@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>인터넷프로그래밍 수강생 설문조사</title>
+<style>
+  :root { --line:#dbe3f0; --brand:#1e346e; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:#eef2f8; color:#111; font-family:"Apple SD Gothic Neo","Malgun Gothic",sans-serif; line-height:1.7; }
+  .wrap { max-width:720px; margin:0 auto; padding:32px 20px 64px; }
+  header { background:var(--brand); color:#fff; border-radius:14px; padding:28px; }
+  header h1 { margin:0 0 6px; font-size:26px; }
+  header p { margin:0; color:#c9d6ef; font-size:14px; }
+  form { background:#fff; border:1px solid var(--line); border-radius:14px; padding:24px; margin-top:20px; }
+  fieldset { border:none; border-top:1px solid var(--line); margin:0 0 4px; padding:18px 0 6px; }
+  fieldset:first-of-type { border-top:none; padding-top:0; }
+  legend { font-weight:700; color:var(--brand); font-size:16px; padding:0; }
+  label.q { display:block; font-weight:600; margin:10px 0 4px; }
+  input[type=text], input[type=email], select, textarea {
+    width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px;
+    font-size:15px; font-family:inherit; background:#fff;
+  }
+  textarea { min-height:120px; resize:vertical; }
+  .opts { display:flex; flex-wrap:wrap; gap:8px 20px; padding:4px 0; }
+  .opts label { display:inline-flex; align-items:center; gap:6px; font-size:15px; }
+  .hint { color:#5b6b86; font-size:13px; margin:2px 0 0; }
+  .actions { margin-top:20px; display:flex; gap:10px; }
+  button { padding:12px 22px; border-radius:10px; border:1px solid var(--line); background:#fff; font-size:15px; font-weight:600; cursor:pointer; }
+  button.primary { background:var(--brand); color:#fff; border-color:var(--brand); }
+  button:hover { filter:brightness(0.97); }
+  footer { margin-top:18px; color:#7a889f; font-size:13px; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>인터넷프로그래밍 수강생 설문조사</h1>
+    <p>K-MOOC 인터넷프로그래밍 · 4주차 과제 · HTML form 태그 실습</p>
+  </header>
+
+  <form action="#" method="post">
+    <fieldset>
+      <legend>응답자 정보</legend>
+      <label class="q" for="name">이름</label>
+      <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
+
+      <label class="q" for="email">이메일</label>
+      <input type="email" id="email" name="email" placeholder="example@kmooc.kr">
+
+      <!-- 4-1에서 배운 HTML5 입력 타입 -->
+      <label class="q" for="startdate">강의를 시작한 날짜</label>
+      <input type="date" id="startdate" name="startdate" min="2026-08-01" max="2026-12-31">
+
+      <label class="q" for="weeks">지금까지 수강한 주차 수</label>
+      <input type="number" id="weeks" name="weeks" min="1" max="15" step="1" value="4">
+
+      <label class="q" for="track">수강 동기</label>
+      <select id="track" name="track">
+        <option value="">선택하세요</option>
+        <option value="job">취업·이직 준비</option>
+        <option value="hobby">관심 분야 학습</option>
+        <option value="credit">학점 취득</option>
+        <option value="etc">기타</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>강의 만족도</legend>
+      <p class="hint">각 항목을 1점(매우 불만족) ~ 5점(매우 만족)으로 평가해 주세요.</p>
+      <label class="q">강의 내용의 이해도</label>
+      <div class="opts">
+        <label><input type="radio" name="content" value="1" required>1</label>
+        <label><input type="radio" name="content" value="2">2</label>
+        <label><input type="radio" name="content" value="3">3</label>
+        <label><input type="radio" name="content" value="4">4</label>
+        <label><input type="radio" name="content" value="5">5</label>
+      </div>
+
+      <label class="q">실습 환경(EC2·리눅스) 편의성</label>
+      <div class="opts">
+        <label><input type="radio" name="env" value="1">1</label>
+        <label><input type="radio" name="env" value="2">2</label>
+        <label><input type="radio" name="env" value="3">3</label>
+        <label><input type="radio" name="env" value="4">4</label>
+        <label><input type="radio" name="env" value="5">5</label>
+      </div>
+
+      <label class="q" for="score">이 강좌를 친구에게 추천할 점수 (0 ~ 10)</label>
+      <input type="range" id="score" name="score" min="0" max="10" step="1" value="8">
+    </fieldset>
+
+    <fieldset>
+      <legend>관심 있는 주제 (복수 선택 가능)</legend>
+      <div class="opts">
+        <label><input type="checkbox" name="topic" value="html"> HTML/CSS</label>
+        <label><input type="checkbox" name="topic" value="js"> JavaScript</label>
+        <label><input type="checkbox" name="topic" value="linux"> 리눅스·서버</label>
+        <label><input type="checkbox" name="topic" value="aws"> AWS 클라우드</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>자유 의견</legend>
+      <label class="q" for="opinion">강의에 바라는 점</label>
+      <textarea id="opinion" name="opinion" placeholder="자유롭게 적어 주세요"></textarea>
+    </fieldset>
+
+    <div class="actions">
+      <button type="submit" class="primary">설문 제출</button>
+      <button type="reset">다시 작성</button>
+    </div>
+  </form>
+
+  <footer>이 페이지는 K-MOOC 인터넷프로그래밍 4주차 과제용 설문조사 웹문서입니다.</footer>
+</div>
+</body>
+</html>

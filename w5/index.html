@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이대희의 자기소개 페이지</title>
+<!-- 5주차 과제: CSS를 외부 스타일시트로 분리해 적용 -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="banner">
+  <h1 class="title">이대희</h1>
+  <p class="subtitle">K-MOOC 인터넷프로그래밍 수강생 · 자기소개 페이지</p>
+</header>
+
+<main class="layout">
+  <section class="card profile">
+    <img class="avatar" src="images/profile.png" alt="프로필">
+    <h2>기본 정보</h2>
+    <dl class="meta">
+      <dt>관심</dt><dd>웹 개발 · 리눅스</dd>
+      <dt>목표</dt><dd>웹 페이지 직접 배포하기</dd>
+      <dt>수강</dt><dd>인터넷프로그래밍 (K-MOOC)</dd>
+    </dl>
+  </section>
+
+  <section class="card">
+    <h2>자기소개</h2>
+    <p>안녕하세요, 이대희입니다. 이번 「인터넷프로그래밍」 강좌에서 웹의 기초를 제대로 다지려고 합니다.
+      리눅스 환경과 HTML/CSS/JavaScript를 익혀, 직접 만든 페이지를 서버에 올리는 것이 목표입니다.</p>
+    <p class="note">이번 5주차 과제에서는 3주차 페이지에 <strong>외부 스타일시트(CSS)</strong>를 적용했습니다.</p>
+
+    <h2 class="gap">상세 소개 (iframe)</h2>
+    <div class="frame-wrap">
+      <iframe src="about.html" title="상세 소개"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">제출물 구성 : index.html · about.html · style.css · images/(profile.png, hobby.png)</footer>
+</body>
+</html>
