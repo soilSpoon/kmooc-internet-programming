@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/w6", "destination": "https://soilspoon.wordpress.com/" },
+    { "source": "/w6/", "destination": "https://soilspoon.wordpress.com/" },
+    { "source": "/w6/:path+", "destination": "https://soilspoon.wordpress.com/:path+" }
+  ]
+}
